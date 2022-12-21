@@ -1,0 +1,20 @@
+menu:
+  - pizza: margherita
+    emoji: "🧀"
+    ingredients:
+      - tomato sauce
+      - mozzarella
+      - tomatoes
+  - pizza: pepperoni
+    emoji: "🍕"
+    ingredients:
+      - tomato sauce
+      - mozzarella
+      - pepperoni
+  - pizza: hawaiian
+    emoji: "🍍"
+    ingredients:
+      - tomato sauce
+      - mozzarella
+      - chicken
+      - pineapples
