@@ -23,7 +23,7 @@ class Pizza:
 
     """Рецепт пиццы"""
 
-    def __init__(self, pizza: dict, xl: bool):
+    def __init__(self, pizza: dict, xl=False):
         """
         Объект класса создается на основе словаря, который парсится из yaml
         """
@@ -42,8 +42,8 @@ class Pizza:
 
     def __str__(self):
         """Строка в меню пиццерии"""
-        return f"- {self.name.title()} {self.emoji} :"
-        ' {", ".join(self.ingredients)}'
+        ingrid = ", ".join(self.ingredients)
+        return f"- {self.name.title()} {self.emoji} : {ingrid}"
 
     def __ed__(self, second):
         """
@@ -68,7 +68,7 @@ class Pizza:
         pass
 
     @_log("👩‍🍳  Приготовили за {}с!")
-    def bake(self, xl: bool):
+    def bake(self):
         """Процедура приготовления пиццы"""
         pass
 
@@ -118,7 +118,8 @@ def order(pizza: str, delivery: bool, l: bool, xl: bool):
     if l and xl:
         print("Придётся сделать выбор L или XL.")
         return
-    pizza_order.bake(xl)
+    pizza_order.xl = xl
+    pizza_order.bake()
     if delivery:
         pizza_order.delivery()
     else:
