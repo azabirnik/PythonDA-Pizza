@@ -4,9 +4,12 @@
 
 ## Команды и опции
 Показать меню
+
     python cli.py menu
     
+    
 Заказать пиццу
+
     python cli.pu order <pizza> [--L|--XL] [--delivery]
   
   `--L` для большой пиццы
