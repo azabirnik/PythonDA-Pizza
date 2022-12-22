@@ -4,7 +4,9 @@ from ruamel.yaml import safe_load
 
 
 def _log(fmt_str: str):
-    """Создает декоратор, который логгирует время выполнения функций пиццерии"""
+    """
+    Создает декоратор, который логгирует время выполнения функций пиццерии
+    """
 
     def decorator(function):
         def wrapper(*args, **kwargs):
@@ -22,7 +24,9 @@ class Pizza:
     """Рецепт пиццы"""
 
     def __init__(self, pizza: dict, xl: bool):
-        """Объект класса создается на основе словаря, который парсится из yaml"""
+        """
+        Объект класса создается на основе словаря, который парсится из yaml
+        """
         self.name = pizza["pizza"].lower()
         self.emoji = pizza["emoji"]
         self.ingredients = pizza["ingredients"]
@@ -38,10 +42,13 @@ class Pizza:
 
     def __str__(self):
         """Строка в меню пиццерии"""
-        return f'- {self.name.title()} {self.emoji} : {", ".join(self.ingredients)}'
+        return f"- {self.name.title()} {self.emoji} :"
+        ' {", ".join(self.ingredients)}'
 
     def __ed__(self, second):
-        """Считаем что пиццы совпадают если их имена, размеры и составы совпадают"""
+        """
+        Считаем что пиццы совпадают если их имена, размеры и составы совпадают
+        """
         if self.name != second.name:
             return False
         # Эмоджи игнорируем
