@@ -22,7 +22,7 @@ class Pizza:
 
     """Рецепт пиццы"""
 
-    def __init__(self, pizza: dict, xl=False) -> "Pizza":
+    def __init__(self, pizza: dict, xl=False) -> None:
         """
         Объект класса создается на основе словаря, который парсится из yaml
         """
