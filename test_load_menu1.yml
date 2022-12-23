@@ -1,0 +1,6 @@
+menu:
+  - pizza: pizza1
+    emoji: "e"
+    ingredients:
+      - i1
+      - i2
