@@ -1,10 +1,9 @@
 import click
-
 from ruamel.yaml import safe_load
 from pizza import Pizza
 
 
-def load_menu(source="pizza.yml"):
+def load_menu(source="pizza.yml") -> dict:
     """
     Загружает меню пиццерии из исходного yml-файла.
     Возвращает словать <элемент меню>: <рецепт>
@@ -16,7 +15,7 @@ def load_menu(source="pizza.yml"):
     return {item["pizza"]: Pizza(item) for item in loaded_menu}
 
 
-def show_menu():
+def show_menu() -> None:
     """Демонстрирует доступное для заказа меню"""
     loaded_menu = load_menu()
     for pizza in loaded_menu.values():
@@ -24,7 +23,7 @@ def show_menu():
 
 
 @click.group()
-def cli():
+def cli() -> None:
     """Техническая функция для инициализации группы декораторов cli"""
     pass
 
@@ -34,7 +33,7 @@ def cli():
 @click.option("--L", default=False, is_flag=True)
 @click.option("--XL", default=False, is_flag=True)
 @click.argument("pizza", nargs=1)
-def order(pizza: str, delivery: bool, l: bool, xl: bool):
+def order(pizza: str, delivery: bool, l: bool, xl: bool) -> None:
     """
     Готовит и доставляет пиццу, если указан флаг delivery.
     Если пиццы нет -- выведет сообщение об этом и доступное меню.
@@ -59,7 +58,7 @@ def order(pizza: str, delivery: bool, l: bool, xl: bool):
 
 
 @cli.command()
-def menu():
+def menu() -> None:
     """Выводит меню"""
     show_menu()
 
